@@ -1,0 +1,108 @@
+/*========================Index page===========================*/
+/* Stil general pentru index.html */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #212121;
+    color: #fff;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    background-color: #121212;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fdd835;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    width: 60px;
+    height: auto;
+  }
+  
+  .logo span {
+    color: #fff;
+  }
+  
+  .navbar a {
+    margin: 0 15px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #fdd835;
+  }
+  
+  .navbar .btn-login {
+    padding: 8px 20px;
+    border-radius: 25px;
+    background-color: #fdd835;
+    color: #212121;
+    font-weight: bold;
+  }
+  
+  .navbar .btn-login:hover {
+    background-color: #fff;
+    color: #212121;
+  }
+  
+  /* SECTIUNE HERO PRINCIPALA */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('img/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content h3 {
+    font-size: 26px;
+    color: #fdd835;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .hero-btn {
+    text-decoration: none;
+    background: #fdd835;
+    color: #212121;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .hero-btn:hover {
+    background-color: #fff;
+  }
+  

@@ -1,0 +1,30 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Înregistrare</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Înregistrare</h2>
+    <form id="registerForm">
+        <input type="text" placeholder="Nume utilizator" required>
+        <input type="password" placeholder="Parolă" required>
+        <input type="text" placeholder="Nume complet" required>
+        <input type="tel" placeholder="Telefon" required>
+        <input type="email" placeholder="Email" required>
+
+        <label for="role">Rol:</label>
+        <select id="role" required>
+            <option value="">Alege rolul</option>
+            <option value="client">Client</option>
+            <option value="antrenor">Antrenor</option>
+        </select>
+
+        <button type="submit">Înregistrează-te</button>
+    </form>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
