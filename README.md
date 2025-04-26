@@ -1,30 +1,30 @@
 # GymManagerWeb 🏋️‍♂️
 
-GymManagerWeb este o aplicație web simplă pentru gestionarea conturilor de utilizatori și planurilor de antrenament la sală.
+GymManagerWeb is a simple web application for managing user accounts and workout plans for a gym.
 
 ## 🌐 Live Demo
-Aplicația este online aici:  
+The project is live here:  
 ➡️ [https://flaviusmarian27.github.io/GymManagerWeb/](https://flaviusmarian27.github.io/GymManagerWeb/)
 
-## 📂 Structura Proiectului
-- `index.html` - Pagina principală
-- `login.html` - Pagina de autentificare
-- `css/` - Fișiere de stilizare (CSS)
-- `js/` - Fișiere JavaScript
-- `img/` - Imagini utilizate în aplicație
+## 📂 Project Structure
+- `index.html` – Main page
+- `login.html` – Login/Sign up page
+- `css/` – Stylesheets
+- `js/` – JavaScript files
+- `img/` – Images used in the app
 
-## 🚀 Funcționalități
-- Creare cont utilizator
-- Autentificare utilizator
-- Navigare între paginile aplicației
+## 🚀 Features
+- User account creation
+- User authentication (Sign In / Sign Up)
+- Basic navigation between pages
 
-## 📋 Tehnologii folosite
+## 📋 Technologies Used
 - HTML5
 - CSS3
-- JavaScript (basic)
+- Basic JavaScript
 
-## 🛠️ În lucru
-Aceasta este o versiune de început. Urmează să adaug funcționalități mai avansate și un design modern!
+## 🛠️ Work in Progress
+This is an early version. More features and a modern UI are planned for future updates!
 
 ---
 
