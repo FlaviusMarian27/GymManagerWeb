@@ -13,74 +13,91 @@
 </head>
 <body>
 
-  <!-- CONTAINERUL PRINCIPAL CU TOT CONTINUTUL -->
-  <div class="container" id="container">
+  <!-- HEADER CU NAVIGARE (FARA Log In) -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="IMAGES/LogoGym.png" alt="Dravius Gym Logo">
+      Dravius <span>Gym</span>
+    </a>
+    
+    <nav class="navbar">
+      <a href="index.html#acasa">Acasă</a>
+      <a href="index.html#servicii">Servicii</a>
+      <a href="index.html#despre">Despre noi</a>
+      <a href="index.html#abonamente">Abonamente</a>
+      <a href="index.html#review">Review-uri</a>
+    </nav>
+  </header>
 
-    <!-- === FORMULAR DE INREGISTRARE === -->
-    <div class="form-container sign-up-container">
-      <form id="registerForm">
-        <h1>Creează cont</h1>
+  <!-- CONȚINUT PRINCIPAL -->
+  <div class="main-content">
+    <div class="container" id="container">
 
-        <div class="social-container">
-          <a href="#"><i class="fab fa-google"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+      <!-- === FORMULAR DE INREGISTRARE === -->
+      <div class="form-container sign-up-container">
+        <form id="registerForm">
+          <h1>Creează cont</h1>
 
-        <span>folosește email-ul pentru a te înregistra</span>
+          <div class="social-container">
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
 
-        <input type="text" placeholder="Nume utilizator" required />
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Parolă" required />
+          <span>Folosește email-ul pentru a te înregistra</span>
 
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+          <input type="text" placeholder="Nume utilizator" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Parolă" required />
 
-    <!-- === FORMULAR DE AUTENTIFICARE === -->
-    <div class="form-container sign-in-container">
-      <form id="loginForm">
-        <h1>Autentificare</h1>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
 
-        <div class="social-container">
-          <a href="#"><i class="fab fa-google"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+      <!-- === FORMULAR DE AUTENTIFICARE === -->
+      <div class="form-container sign-in-container">
+        <form id="loginForm">
+          <h1>Autentificare</h1>
 
-        <span>folosește contul tău pentru a te loga</span>
+          <div class="social-container">
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
 
-        <input type="text" placeholder="Nume utilizator" required />
-        <input type="password" placeholder="Parolă" required />
+          <span>Folosește contul tău pentru a te loga</span>
 
-        <button type="submit">Sign In</button>
-      </form>
-    </div>
+          <input type="text" placeholder="Nume utilizator" required />
+          <input type="password" placeholder="Parolă" required />
 
-    <!-- === PANOU OVERLAY - ANIMATIE SI MESAJ === -->
-    <div class="overlay-container">
-      <div class="overlay">
-        <!-- Partea din stanga (apare cand esti pe formularul Sign Up) -->
-        <div class="overlay-panel overlay-left">
-          <h1>Bine ai revenit!</h1>
-          <p>Intră în cont pentru a accesa planurile de antrenament</p>
-          <button class="ghost" id="signIn">Sign In</button>
-        </div>
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
 
-        <!-- Partea din dreapta (apare cand esti pe formularul Sign In) -->
-        <div class="overlay-panel overlay-right">
-          <h1>Bun venit!</h1>
-          <p>Completează datele pentru a-ți crea contul</p>
-          <button class="ghost" id="signUp">Sign Up</button>
+      <!-- === PANOU OVERLAY - ANIMATIE SI MESAJ === -->
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Bine ai revenit!</h1>
+            <p>Intră în cont pentru a accesa planurile de antrenament</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h1>Bun venit!</h1>
+            <p>Completează datele pentru a-ți crea contul</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <!-- Script pentru animația overlay-ului -->
   <script src="./JS/auth.js"></script>
+
 </body>
 </html>

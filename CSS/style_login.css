@@ -9,12 +9,57 @@
 /* === STILIZARE BODY === */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #212121; /* fundal galben pal */
+  background: #212121;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+  background-color: #121212;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fdd835;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.navbar a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fdd835;
+}
+
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: calc(100vh - 80px); /* scade header-ul */
+  padding-top: 20px; /* în caz că vrei extra spațiu */
 }
 
 /* === CONTAINER PRINCIPAL === */
