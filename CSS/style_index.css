@@ -87,7 +87,7 @@ body {
 /* Hero */
 .hero {
   min-height: 90vh;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('IMAGES/logo.png');
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('./IMAGES/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -169,7 +169,7 @@ body {
 /* ====== Review ====== */
 .swiper-wrapper {
   display: flex;
-  align-items: stretch; /* toate slide-urile egale pe înălțime */
+  align-items: stretch; /* toate slide-urile egale pe inaltime */
 }
 
 .swiper-slide {
@@ -192,12 +192,22 @@ body {
   align-items: center;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  min-height: 250px; /* <- asta seteaza o minima inaltime ca sa fie egale */
-  transition: transform 0.3s ease;
+  min-height: 250px; /* seteaza o minima inaltime ca sa fie egale */
+  transition: transform 0.3s ease, opacity 0.6s ease; /* adaugam si animatie pe opacitate */
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* Cand dam hover pe card */
 .review-card:hover {
   transform: translateY(-10px);
+}
+
+/* Cand cardul este vizibil la scroll */
+.review-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .review-card img {
@@ -287,8 +297,109 @@ body {
   margin-top: 50px;
 }
 
+/* === RESPONSIVE DESIGN GENERAL === */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 40px;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Header si navbar responsive */
+  .header {
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #121212;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .btn-login {
+    margin-top: 10px;
+  }
+
+  /* Hero section responsive */
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content h3 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  /* Servicii, despre, abonamente sectiuni */
+  .section h2 {
+    font-size: 30px;
+  }
+
+  .section p {
+    font-size: 16px;
+  }
+
+  /* Review card-uri */
   .swiper-slide {
-    margin: 0 5px;
+    width: 90%;
+  }
+
+  .review-card {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  /* Buton scroll to top mai mic */
+  #scrollToTopBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustam si mai mult pentru telefoane mici */
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content h3 {
+    font-size: 20px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  .btn-login {
+    padding: 6px 15px;
+    font-size: 14px;
   }
 }
