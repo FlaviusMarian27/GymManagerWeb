@@ -283,3 +283,46 @@ button.ghost:hover {
   color: #fff;
 }
 
+/* RESPONSIVE DESIGN LOGIN */
+/* RESPONSIVE pentru ecrane sub 768px */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding-top: 120px; /* mai mult padding ca să nu fie lipit de navbar */
+  }
+
+  .container {
+    flex-direction: column;
+    width: 90%;
+    min-height: auto;
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+  .form-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: translateX(0) !important;
+  }
+
+  .overlay-container {
+    display: none; /* ASCUNDEM overlay-ul pe telefon */
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .social-container a {
+    margin: 5px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
