@@ -83,7 +83,7 @@ body {
 /* Hero */
 .hero {
     min-height: 90vh;
-    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('./IMAGES/logo.png');
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../IMAGES/LogoGym.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -156,45 +156,80 @@ body {
 }
 
 /* Despre Noi Section */
+/* ======= DESPRE NOI SECTION ======= */
 .despre-section {
-    padding: 80px 20px;
-    background-color: #212121;
-    color: #fff;
+  padding: 80px 20px;
+  background-color: #212121;
+  color: #fff;
 }
 
 .despre-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.despre-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .despre-image img {
-    max-width: 500px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .despre-content {
-    flex: 1;
-    min-width: 300px;
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .despre-content h2 {
-    font-size: 36px;
-    color: #fdd835;
-    margin-bottom: 20px;
+  font-size: 36px;
+  color: #fdd835;
+  margin-bottom: 20px;
 }
 
 .despre-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+/* Când intră în vizibilitate, animăm */
+.despre-image.visible img,
+.despre-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive - Telefon */
+@media (max-width: 768px) {
+  .despre-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .despre-image,
+  .despre-content {
+      padding: 20px;
+  }
 }
 
 /* Swiper Review */

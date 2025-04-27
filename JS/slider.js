@@ -4,7 +4,7 @@ var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   centeredSlides: false,
   autoplay: {
-    delay: 2500,
+    delay: 3000,
     disableOnInteraction: false,
   },
   breakpoints: {
@@ -20,6 +20,30 @@ var swiper = new Swiper(".mySwiper", {
   }
 });
 
+// === Animatie la scroll pentru sectiunea Despre Noi ===
+const despreImage = document.querySelector('.despre-image img');
+const despreContent = document.querySelector('.despre-content');
+
+function showDespreOnScroll() {
+  const triggerBottom = window.innerHeight * 0.9;
+
+  if (despreImage) {
+    const imgTop = despreImage.getBoundingClientRect().top;
+    if (imgTop < triggerBottom) {
+      despreImage.parentElement.classList.add('visible');
+    }
+  }
+
+  if (despreContent) {
+    const contentTop = despreContent.getBoundingClientRect().top;
+    if (contentTop < triggerBottom) {
+      despreContent.classList.add('visible');
+    }
+  }
+}
+
+window.addEventListener('scroll', showDespreOnScroll);
+window.addEventListener('load', showDespreOnScroll);
 
   // Selectam toate cardurile de review
 const reviewCards = document.querySelectorAll('.review-card');
@@ -42,4 +66,3 @@ function showOnScroll() {
 // Ascultam evenimentele de scroll si load
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
-  
