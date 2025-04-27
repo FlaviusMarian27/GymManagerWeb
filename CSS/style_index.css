@@ -87,7 +87,7 @@ body {
 /* Hero */
 .hero {
   min-height: 90vh;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../IMAGES/logo.png');
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('IMAGES/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -136,7 +136,7 @@ body {
 
 .section h2 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 50px; 
   color: #fdd835;
 }
 
