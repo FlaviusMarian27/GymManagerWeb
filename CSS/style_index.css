@@ -233,6 +233,81 @@ body {
   }
 }
 
+/* ===== ABONAMENTE ===== */
+.abonamente-section {
+  background-color: #212121;
+  color: #fff;
+}
+
+.abonamente-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.abonament-card {
+  background: #121212;
+  border: 2px solid #fdd835;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 300px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.abonament-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(253, 216, 53, 0.3);
+}
+
+.abonament-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fdd835;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.abonament-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.abonament-card ul li {
+  margin-bottom: 10px;
+}
+
+.abonament-btn {
+  display: inline-block;
+  background-color: #fdd835;
+  color: #212121;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.abonament-btn:hover {
+  background-color: #fff;
+  color: #212121;
+}
+
+/* Responsive Abonamente */
+@media (max-width: 768px) {
+  .abonamente-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Swiper Review */
 .swiper-wrapper {
     display: flex;
