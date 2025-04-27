@@ -54,17 +54,18 @@ body {
   color: #fdd835;
 }
 
+/* MAIN CONTENT */
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 80px); /* scade header-ul */
-  padding-top: 20px; /* în caz că vrei extra spațiu */
+  min-height: calc(100vh - 80px);
+  padding-top: 20px;
 }
 
 /* === CONTAINER PRINCIPAL === */
 .container {
-  background: #fff8c6; /* galben deschis in loc de alb */
+  background: #fff8c6;
   border-radius: 40px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -85,6 +86,8 @@ form {
   align-items: center;
   height: 100%;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
 /* === CAMPURI INPUT === */
@@ -97,6 +100,14 @@ input {
   width: 100%;
   font-size: 16px;
   color: #212121;
+  transition: 0.3s ease;
+}
+
+/* Hover efect pe inputuri */
+input:focus {
+  border-color: #fdd835;
+  box-shadow: 0 0 8px rgba(253, 216, 53, 0.5);
+  outline: none;
 }
 
 /* === BUTOANE NEGRE === */
@@ -115,13 +126,14 @@ button {
   cursor: pointer;
 }
 
-/* Hover pe butoanele negre - devin galbene */
+/* Hover pe butoane - efect galben si scale */
 button:hover {
   background-color: #fdd835;
   color: #212121;
+  transform: scale(1.05);
 }
 
-/* === BUTOANE GHOST (folosite in overlay) === */
+/* === BUTOANE GHOST === */
 button.ghost {
   background-color: transparent;
   border: 2px solid #212121;
@@ -129,7 +141,6 @@ button.ghost {
   transition: 0.3s ease;
 }
 
-/* Hover pe ghost - devine buton plin negru */
 button.ghost:hover {
   background-color: #212121;
   color: #ffffff;
@@ -157,7 +168,7 @@ button.ghost:hover {
   z-index: 1;
 }
 
-/* Animatie pentru trecerea de la login la register */
+/* Animatii container */
 .container.right-panel-active .sign-in-container {
   transform: translateX(100%);
 }
@@ -166,32 +177,6 @@ button.ghost:hover {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
-}
-
-/* === OVERLAY (panou lateral) === */
-.overlay-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  transition: transform 0.6s ease-in-out;
-  z-index: 100;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-}
-
-/* Fundalul overlay-ului in gradient galben intens */
-.overlay {
-  background: linear-gradient(to right, #fdd835, #f9a825);
-  color: #212121;
-  position: relative;
-  left: -100%;
-  height: 100%;
-  width: 200%;
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
 }
 
 /* Activeaza overlay-ul pe partea stanga */
@@ -223,7 +208,41 @@ button.ghost:hover {
     pointer-events: all; /* reactivam interactiunile */
   }  
 
-/* === PANELURI INTERNE IN OVERLAY === */
+/* === OVERLAY === */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.overlay {
+  background: linear-gradient(to right, #fdd835, #f9a825);
+  color: #212121;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Activare overlay */
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+/* Overlay panels */
 .overlay-panel {
   position: absolute;
   display: flex;
@@ -238,7 +257,27 @@ button.ghost:hover {
   transition: transform 0.6s ease-in-out;
 }
 
-/* Panoul stanga */
+/* Animatii text overlay */
+.overlay-panel h1,
+.overlay-panel p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s forwards;
+}
+
+.overlay-panel p {
+  animation-delay: 0.3s;
+}
+
+/* SlideUp Animation */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Panouri interne */
 .overlay-left {
   transform: translateX(-20%);
 }
@@ -247,7 +286,6 @@ button.ghost:hover {
   transform: translateX(0);
 }
 
-/* Panoul dreapta */
 .overlay-right {
   right: 0;
   transform: translateX(0);
@@ -262,7 +300,6 @@ button.ghost:hover {
   margin: 20px 0;
 }
 
-/* Stil pentru iconite sociale */
 .social-container a {
   border: 1px solid #212121;
   border-radius: 50%;
@@ -274,21 +311,26 @@ button.ghost:hover {
   width: 40px;
   color: #212121;
   font-size: 18px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Hover pe iconite - fundal negru, text alb */
 .social-container a:hover {
   background-color: #212121;
   color: #fff;
 }
 
-/* RESPONSIVE DESIGN LOGIN */
-/* RESPONSIVE pentru ecrane sub 768px */
+/* === RESPONSIVE DESIGN LOGIN === */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column;
-    padding-top: 120px; /* mai mult padding ca să nu fie lipit de navbar */
+    padding-top: 120px;
   }
 
   .container {
@@ -309,7 +351,7 @@ button.ghost:hover {
   }
 
   .overlay-container {
-    display: none; /* ASCUNDEM overlay-ul pe telefon */
+    display: none;
   }
 
   form {
@@ -324,5 +366,30 @@ button.ghost:hover {
     width: 100%;
     max-width: 250px;
   }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #121212;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
+/* === FADEIN Animation === */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

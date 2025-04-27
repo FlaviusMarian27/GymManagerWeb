@@ -12,7 +12,17 @@
   <!-- Iconite Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- SwiperJS CSS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
 </head>
+
+<button id="scrollToTopBtn" title="Du-te sus">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
 <body>
   <!-- HEADER CU NAVIGARE -->
@@ -22,18 +32,23 @@
       Dravius <span>Gym</span>
     </a>
     
-    <nav class="navbar">
-      <a href="index.html">Acasă</a>
-      <a href="#servicii">Servicii</a>
-      <a href="#despre">Despre noi</a>
-      <a href="#abonamente">Abonamente</a>
-      <a href="#review">Review-uri</a>
+    <nav class="navbar" id="navbar">
+      <a href="index.html#acasa">Acasă</a>
+      <a href="index.html#servicii">Servicii</a>
+      <a href="index.html#despre">Despre noi</a>
+      <a href="index.html#abonamente">Abonamente</a>
+      <a href="index.html#review">Review-uri</a>
       <a href="login.html" class="btn-login">Log In</a>
     </nav>
+  
+    <div class="menu-icon" id="menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
   </header>
+  
 
   <!-- SECTIUNEA PRINCIPALA -->
-  <section class="hero">
+  <section id="acasa" class="hero">
     <div class="hero-content">
       <h1>Construiește-ți Fizicul Visat</h1>
       <h3><span>Dravius Gym</span> este locul perfect pentru transformarea ta fizică!</h3>
@@ -42,5 +57,139 @@
     </div>
   </section>
 
+  <!-- Servicii -->
+  <section id="servicii" class="section">
+    <h2>Serviciile Noastre</h2>
+    <p>Personal Training, Clase de Grup, Nutriție și multe altele!</p>
+  </section>
+
+  <!-- Despre noi -->
+  <section id="despre" class="section">
+    <h2>Despre Dravius Gym</h2>
+    <p>Suntem dedicați să te ajutăm să-ți atingi obiectivele fitness.</p>
+  </section>
+
+  <!-- Abonamente -->
+  <section id="abonamente" class="section">
+    <h2>Abonamente</h2>
+    <p>Alege pachetul perfect pentru tine și începe călătoria ta fitness!</p>
+  </section>
+
+  <!-- Review-uri -->
+  <!-- Review-uri -->
+<section id="review" class="section">
+  <h2>Ce spun clienții</h2>
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Review 1 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/IonelPopescu.jpg" alt="Ionel Popescu">
+          <h3>Ionel Popescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Sala Dravius Gym m-a ajutat să-mi depășesc limitele! Atmosfera este incredibilă, iar antrenorii sunt foarte dedicați. Recomand cu încredere!</p>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/AndreeaMarinescu.jpg" alt="Andreea Marinescu">
+          <h3>Andreea Marinescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Îmi place enorm de mult profesionalismul de aici! Programele sunt personalizate și m-au ajutat să îmi ating obiectivele mai repede decât mă așteptam.</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/MihaiStan.jpg" alt="Mihai Stan">
+          <h3>Mihai Stan</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Dravius Gym nu este doar o sală de forță, ci o comunitate! Echipamentele sunt moderne și atmosfera te motivează!</p>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/ElenaIonescu.jpg" alt="Elena Ionescu">
+          <h3>Elena Ionescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Am încercat multe săli de fitness, dar Dravius Gym este de departe preferata mea! Atmosferă prietenoasă și rezultate rapide!</p>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/AlbertBudai.jpg" alt="Albert Budai">
+          <h3>Albert Budai</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Experiență excelentă la Dravius Gym! Antrenorii m-au ajutat să-mi ating obiectivele rapid și eficient.</p>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/AnaMaria.jpg" alt="Ana Maria">
+          <h3>Ana Maria</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un loc extraordinar pentru antrenamente! Am văzut rezultate vizibile în doar câteva săptămâni!</p>
+        </div>
+      </div>
+
+      <!-- Review 7 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/BiancaPetrea.jpg" alt="Bianca Petrea">
+          <h3>Bianca Petrea</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Curățenie impecabilă, echipamente moderne și o echipă care te susține constant! Recomand cu încredere!</p>
+        </div>
+      </div>
+
+      <!-- Review 8 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/PaulSomesan.jpg" alt="Paul Someșan">
+          <h3>Paul Someșan</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un mediu super motivant! Antrenamente bine gândite pentru fiecare nivel de fitness.</p>
+        </div>
+      </div>
+
+      <!-- Review 9 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="IMAGES/DanielaPopa.jpg" alt="Daniela Popa">
+          <h3>Daniela Popa</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un ambient excelent și programe de antrenament adaptate perfect fiecărui obiectiv de fitness!</p>
+        </div>
+      </div>
+
+    </div> <!-- end swiper-wrapper -->
+  </div> <!-- end swiper -->
+
+</section>
+  
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Dravius Gym. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> <!-- libraria swiper -->
+  <script src="./JS/scroll_active.js"></script>
+  <script src="./JS/navbar.js"></script>
+  <script src="./JS/slider.js"></script> 
+
+  
 </body>
 </html>

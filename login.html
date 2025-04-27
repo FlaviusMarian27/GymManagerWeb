@@ -11,6 +11,7 @@
   <!-- Font Awesome pentru iconițele sociale -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
@@ -21,14 +22,18 @@
       Dravius <span>Gym</span>
     </a>
     
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <a href="index.html#acasa">Acasă</a>
       <a href="index.html#servicii">Servicii</a>
       <a href="index.html#despre">Despre noi</a>
       <a href="index.html#abonamente">Abonamente</a>
       <a href="index.html#review">Review-uri</a>
     </nav>
-  </header>
+  
+    <div class="menu-icon" id="menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>  
 
   <!-- CONȚINUT PRINCIPAL -->
   <div class="main-content">
@@ -99,6 +104,7 @@
 
   <!-- Script pentru animația overlay-ului -->
   <script src="./JS/auth.js"></script>
+  <script src="./JS/navbar.js"></script>
 
 </body>
 </html>
