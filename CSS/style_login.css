@@ -148,6 +148,23 @@ button.ghost:hover {
 }
 
 /* === CONTAINERE FORMULARE === */
+button {
+  /* cele existente */
+  border-radius: 30px;
+  border: none;
+  background-color: #212121;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 50px;
+  margin-top: 15px;
+  margin-bottom: 30px; /* ADAUGAT SPATIU */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
 .form-container {
   position: absolute;
   top: 0;
@@ -317,6 +334,32 @@ button.ghost:hover {
 .social-container a:hover {
   background-color: #212121;
   color: #fff;
+}
+
+/* Stilizare Select Rol */
+select {
+  background-color: #fffde7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 8px; /* ajustat padding */
+  width: 140px;      /* ajustat width */
+  font-size: 14px;   /* font usor mai mic */
+  color: #212121;
+  transition: 0.3s ease;
+  appearance: none; /* Scoate sageata nativa */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+
+/* Hover & Focus efect */
+select:focus {
+  border-color: #fdd835;
+  box-shadow: 0 0 8px rgba(253, 216, 53, 0.5);
+  outline: none;
 }
 
 /*Copyright*/

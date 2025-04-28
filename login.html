@@ -39,10 +39,10 @@
   <div class="main-content">
     <div class="container" id="container">
 
-      <!-- === FORMULAR DE INREGISTRARE === -->
+      <!-- FORMULAR DE INREGISTRARE -->
       <div class="form-container sign-up-container">
         <form id="registerForm">
-          <h1>Creează cont</h1>
+          <h1>Creeaza cont</h1>
 
           <div class="social-container">
             <a href="#"><i class="fab fa-google"></i></a>
@@ -51,11 +51,18 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
 
-          <span>Folosește email-ul pentru a te înregistra</span>
+          <span>Foloseste email-ul pentru a te inregistra</span>
 
           <input type="text" placeholder="Nume utilizator" required />
           <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Parolă" required />
+          <input type="password" placeholder="Parola" required />
+
+          <!-- ALEGERE ROL -->
+          <select id="role" required>
+            <option value="">Selecteaza rolul</option>
+            <option value="Client">Client</option>
+            <option value="Antrenor">Antrenor</option>
+          </select>
 
           <button type="submit">Sign Up</button>
         </form>
