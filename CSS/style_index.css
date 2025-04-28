@@ -143,6 +143,58 @@ body {
     margin: 0 auto;
 }
 
+/* Sectiune Servicii */
+.servicii-section {
+    padding: 60px 20px;
+    background: #111;
+    text-align: center;
+}
+  
+.servicii-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #fbc02d;
+}
+  
+.servicii-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+  
+.serviciu {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+  
+.serviciu img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+  
+.serviciu h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+  
+.serviciu p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+  
+.serviciu:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+  
+
 /* Review Section */
 .review-section {
     padding: 60px 20px;
