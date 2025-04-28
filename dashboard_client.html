@@ -1,36 +1,220 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard Client</title>
-  <link rel="stylesheet" href="./style_dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Client - Dravius Gym</title>
+
+  <link rel="stylesheet" href="./CSS/style_index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
+
 <body>
 
-  <header>
-    <h1>Bine ai venit, <span id="client-name"></span>!</h1>
-    <button id="logoutBtn">Logout</button>
-  </header>
+    <button id="scrollToTopBtn" title="Du-te sus">
+    <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <main>
-    <p>Aici poti trimite cereri catre antrenori!</p>
-    <!-- Aici in viitor putem adauga lista de antrenori -->
-  </main>
+    <header class="header">
+    <a href="#top" class="logo">
+        <img src="./IMAGES/LogoGym.png" alt="Dravius Gym Logo">
+        Dravius <span>Gym</span>
+    </a>
+    
+    <nav class="navbar" id="navbar">
+        <a href="#acasa">Acasă</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#abonamente">Abonamente</a>
+        <a href="#review">Review-uri</a>
+        <button id="logoutBtn" class="btn-login">Log Out</button>
+    </nav>
 
-  <script>
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    if (!user || user.role !== 'Client') {
-      window.location.href = 'login.html';
-    } else {
-      document.getElementById('client-name').textContent = user.username;
-    }
+    <div class="menu-icon" id="menu-icon">
+        <i class="fas fa-bars"></i>
+    </div>
+    </header>
 
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('currentUser');
-      window.location.href = 'login.html';
-    });
-  </script>
+    <section id="acasa" class="hero">
+    <div class="hero-content">
+        <h1>Bun venit, <span id="usernamePlaceholder"></span>!</h1>
+        <h3><span>Dravius Gym</span> este locul perfect pentru transformarea ta fizică!</h3>
+        <p>Descoperă programe personalizate, antrenori profesioniști și echipamente de ultimă generație.</p>
+    </div>
+    </section>
 
+    <section id="servicii" class="section">
+    <h2>Serviciile Noastre</h2>
+    <p>Personal Training, Clase de Grup, Nutriție și multe altele!</p>
+    </section>
+
+    <section id="despre" class="despre-section">
+    <div class="despre-container">
+        <div class="despre-image">
+        <img src="./IMAGES/dravius_gym_team.png" alt="Despre Dravius Gym" class="visible">
+        </div>
+        <div class="despre-content visible">
+        <h2>Cine suntem?</h2>
+        <p>La Dravius Gym, din inima Timișoarei, credem că fiecare transformare începe cu un pas curajos și cu sprijinul potrivit. De aceea, am construit mai mult decât o sală de fitness – am creat o comunitate unde fiecare membru este susținut să-și atingă cele mai îndrăznețe obiective.</p>
+        <p>Oferim programe de antrenament personalizate, adaptate fiecărui nivel de experiență, de la începători la sportivi avansați. Echipamentele noastre moderne și antrenorii dedicați îți vor oferi tot ce ai nevoie pentru a-ți depăși limitele într-un mediu sigur, prietenos și motivant.</p>
+        <p>La Dravius Gym, fiecare sesiune de antrenament este o oportunitate să devii mai puternic, mai încrezător și mai aproape de cea mai bună versiune a ta. Punem accent pe educație sportivă, nutriție corectă și o mentalitate de învingător.</p>
+        <p>Indiferent dacă îți dorești să slăbești, să-ți tonifiezi corpul, să îți crești performanțele sportive sau pur și simplu să te simți mai bine în pielea ta, suntem aici să te ghidăm pas cu pas.</p>
+        <p>Împreună, construim mai mult decât fizic – construim caractere, încredere și noi orizonturi. Te așteptăm în familia Dravius Gym, locul unde progresul nu este doar un obiectiv, ci un mod de viață!</p>
+        </div>
+    </div>
+    </section>
+
+    <section id="abonamente" class="section abonamente-section">
+    <h2>Planurile Noastre</h2>
+
+    <div class="abonamente-container">
+        <div class="abonament-card">
+        <h3>Basic</h3>
+        <p class="price">100 RON/Lună</p>
+        <ul>
+            <li>Acces sală nelimitat</li>
+            <li>Plan antrenament de bază</li>
+            <li>Acces la clase de grup</li>
+        </ul>
+        <a href="#" class="abonament-btn">Cumpără</a>
+        </div>
+
+        <div class="abonament-card">
+        <h3>Pro</h3>
+        <p class="price">180 RON/Lună</p>
+        <ul>
+            <li>Acces complet sală + clase</li>
+            <li>Plan antrenament personalizat</li>
+            <li>Consiliere nutrițională</li>
+        </ul>
+        <a href="#" class="abonament-btn">Cumpără</a>
+        </div>
+
+        <div class="abonament-card">
+        <h3>Premium</h3>
+        <p class="price">250 RON/Lună</p>
+        <ul>
+            <li>Personal Training 1-1</li>
+            <li>Acces VIP sală + servicii wellness</li>
+            <li>Suport nutrițional avansat</li>
+        </ul>
+        <a href="#" class="abonament-btn">Cumpără</a>
+        </div>
+    </div>
+    </section>
+
+    <section id="review" class="section">
+    <h2>Ce spun clienții</h2>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+        <!-- Review 1 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/IonelPopescu.jpg" alt="Ionel Popescu">
+          <h3>Ionel Popescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Sala Dravius Gym m-a ajutat să-mi depășesc limitele! Atmosfera este incredibilă, iar antrenorii sunt foarte dedicați. Recomand cu încredere!</p>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/AndreeaMarinescu.jpg" alt="Andreea Marinescu">
+          <h3>Andreea Marinescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Îmi place enorm de mult profesionalismul de aici! Programele sunt personalizate și m-au ajutat să îmi ating obiectivele mai repede decât mă așteptam.</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/MihaiStan.jpg" alt="Mihai Stan">
+          <h3>Mihai Stan</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Dravius Gym nu este doar o sală de forță, ci o comunitate! Echipamentele sunt moderne și atmosfera te motivează!</p>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/ElenaIonescu.jpg" alt="Elena Ionescu">
+          <h3>Elena Ionescu</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Am încercat multe săli de fitness, dar Dravius Gym este de departe preferata mea! Atmosferă prietenoasă și rezultate rapide!</p>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/AlbertBudai.jpg" alt="Albert Budai">
+          <h3>Albert Budai</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Experiență excelentă la Dravius Gym! Antrenorii m-au ajutat să-mi ating obiectivele rapid și eficient.</p>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/AnaMaria.jpg" alt="Ana Maria">
+          <h3>Ana Maria</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un loc extraordinar pentru antrenamente! Am văzut rezultate vizibile în doar câteva săptămâni!</p>
+        </div>
+      </div>
+
+      <!-- Review 7 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/BiancaPetrea.jpg" alt="Bianca Petrea">
+          <h3>Bianca Petrea</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Curățenie impecabilă, echipamente moderne și o echipă care te susține constant! Recomand cu încredere!</p>
+        </div>
+      </div>
+
+      <!-- Review 8 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/PaulSomesan.jpg" alt="Paul Someșan">
+          <h3>Paul Someșan</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un mediu super motivant! Antrenamente bine gândite pentru fiecare nivel de fitness.</p>
+        </div>
+      </div>
+
+      <!-- Review 9 -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <img src="./IMAGES/DanielaPopa.jpg" alt="Daniela Popa">
+          <h3>Daniela Popa</h3>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Un ambient excelent și programe de antrenament adaptate perfect fiecărui obiectiv de fitness!</p>
+        </div>
+      </div>
+        
+        </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+    <p>&copy; 2025 Dravius Gym. Toate drepturile rezervate.</p>
+    </footer>
+
+    <!-- Script-uri -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./JS/navbar.js"></script>
+    <script src="./JS/scroll_active.js"></script>
+    <script src="./JS/slider.js"></script>
+    <script src="./JS/copyright.js"></script>
+    <script src="./JS/dashboard_client.js"></script>
 </body>
 </html>
