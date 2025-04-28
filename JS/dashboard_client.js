@@ -1,21 +1,16 @@
-// Gestionam butonul de logout
+// ─── Logout button ────────────────────────────────────────────
 const logoutBtn = document.getElementById('logoutBtn');
-
 if (logoutBtn) {
-  logoutBtn.addEventListener('click', function() {
-    localStorage.removeItem('loggedInUser');
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('currentUser');
     window.location.href = 'login.html';
   });
 }
 
-// Citim utilizatorul logat
-const user = JSON.parse(localStorage.getItem('loggedUser'));
-
+// ─── Displaying the user ─────────────────────────────────────
+const user = JSON.parse(localStorage.getItem('currentUser'));
 if (user) {
-  // Scriem numele în span-ul special
   document.getElementById('usernamePlaceholder').textContent = user.username;
 } else {
-  // Daca nu e logat corect, redirectionam
   window.location.href = 'login.html';
 }
-
