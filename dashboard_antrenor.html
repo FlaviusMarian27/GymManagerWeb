@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Antrenor</title>
+  <link rel="stylesheet" href="style_dashboard.css">
+</head>
+<body>
+
+  <header>
+    <h1>Bine ai venit, Antrenor <span id="coach-name"></span>!</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+    <p>Aici vei vedea cererile de la clienti pentru colaborare!</p>
+    <!-- Aici putem afisa cereri viitoare -->
+  </main>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user || user.role !== 'Antrenor') {
+      window.location.href = 'login.html';
+    } else {
+      document.getElementById('coach-name').textContent = user.username;
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    });
+  </script>
+
+</body>
+</html>

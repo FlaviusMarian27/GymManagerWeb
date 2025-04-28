@@ -1,98 +1,60 @@
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+const container    = document.getElementById('container');
 
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-});
+signUpButton.addEventListener('click', () => container.classList.add("right-panel-active"));
+signInButton.addEventListener('click', () => container.classList.remove("right-panel-active"));
 
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-});
+const registerForm = document.getElementById('registerForm');
+const loginForm    = document.getElementById('loginForm');
+const roleSelect   = document.getElementById('role');        // id="role" în HTML
 
-// Selectam elementele de formular
-const registerForm = document.getElementById("registerForm");
-const loginForm = document.getElementById("loginForm");
-const roleSelect = document.getElementById("roleSelect");
-
-// Functie pentru salvarea unui utilizator nou
-function saveUser(user) {
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-  users.push(user);
-  localStorage.setItem("users", JSON.stringify(users));
-}
-
-// Functie pentru gasirea unui utilizator dupa email si parola
-function findUser(email, password) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  return users.find(
-    (user) => user.email === email && user.password === password
-  );
-}
-
-// VALIDARE formular Sign Up
-function validateRegisterForm(username, email, password, role) {
-  if (!username || !email || !password || !role) {
-    alert("Completeaza toate campurile!");
-    return false;
-  }
-
-  if (!email.includes("@") || !email.includes(".")) {
-    alert("Introdu un email valid!");
-    return false;
-  }
-
-  if (password.length < 6) {
-    alert("Parola trebuie sa aiba minim 6 caractere!");
-    return false;
-  }
-
-  return true;
-}
-
-// Eveniment: Creare cont (Register)
+// Înregistrare
 if (registerForm) {
-  registerForm.addEventListener("submit", function (e) {
+  registerForm.addEventListener('submit', e => {
     e.preventDefault();
-
-    const username = registerForm.querySelector("input[placeholder='Nume utilizator']").value;
-    const email = registerForm.querySelector("input[placeholder='Email']").value;
-    const password = registerForm.querySelector("input[placeholder='Parola']").value;
-    const role = roleSelect.value;
-
-    if (!validateRegisterForm(username, email, password, role)) return;
-
-    const user = { username, email, password, role };
-    saveUser(user);
-
-    alert("Cont creat cu succes! Te poti loga acum.");
-    window.location.reload();
-  });
-}
-
-// Eveniment: Logare (Sign In)
-if (loginForm) {
-  loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const email = loginForm.querySelector("input[placeholder='Email']").value;
-    const password = loginForm.querySelector("input[placeholder='Parola']").value;
-
-    const user = findUser(email, password);
-
-    if (user) {
-      alert(`Bine ai revenit, ${user.username}!`);
-      localStorage.setItem("currentUser", JSON.stringify(user));
-
-      // Redirectionare dupa rol
-      if (user.role === "client") {
-        window.location.href = "dashboard_client.html";
-      } else if (user.role === "antrenor") {
-        window.location.href = "dashboard_antrenor.html";
-      }
-    } else {
-      alert("Email sau parola incorecta!");
+    const inputs   = registerForm.querySelectorAll('input');
+    const user     = {
+      username: inputs[0].value.trim(),
+      email:    inputs[1].value.trim(),
+      password: inputs[2].value,
+      role:     roleSelect.value
+    };
+    if (!user.username || !user.email || !user.password || !user.role) {
+      alert('Completează toate câmpurile!');
+      return;
     }
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    if (users.find(u => u.email === user.email)) {
+      alert('Există deja un cont cu acest email.');
+      return;
+    }
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('Cont creat cu succes! Te rugăm să te autentifici.');
+    location.reload();
   });
 }
 
+// Autentificare
+if (loginForm) {
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const inputs   = loginForm.querySelectorAll('input');
+    const username = inputs[0].value.trim();
+    const password = inputs[1].value;
+    if (!username || !password) {
+      alert('Completează toate câmpurile!');
+      return;
+    }
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user  = users.find(u => u.username === username && u.password === password);
+    if (!user) {
+      alert('Nume de utilizator sau parolă incorectă!');
+      return;
+    }
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    const dest = user.role === 'Client' ? 'dashboard_client.html' : 'dashboard_antrenor.html';
+    window.location.href = dest;
+  });
+}

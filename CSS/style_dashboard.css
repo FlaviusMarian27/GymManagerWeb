@@ -1,0 +1,41 @@
+/* Stilizare dashboard */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #fdd835;
+    color: #212121;
+    padding: 20px;
+    border-bottom: 5px solid #f9a825;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  main {
+    padding: 50px 20px;
+  }
+  
+  #logoutBtn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #212121;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #logoutBtn:hover {
+    background: #f9a825;
+    color: #212121;
+  }
+  
