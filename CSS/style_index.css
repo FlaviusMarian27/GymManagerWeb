@@ -194,6 +194,23 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
   
+/* Buton Alatura-te servicii */
+.btn-alatura {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #fbc02d;
+    color: #111;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+  
+.btn-alatura:hover {
+    background-color: #ffd600;
+    transform: scale(1.05);
+}  
 
 /* Review Section */
 .review-section {
