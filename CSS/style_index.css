@@ -486,6 +486,27 @@ body {
     }
 }
 
+/* Locație */
+.location-section {
+    padding: 80px 20px;
+    background-color: #212121;
+    color: #fdd835;
+    text-align: center;
+}
+  
+.location-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+  
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}  
+
 /*Social Media*/
 .contact-section {
     text-align: center;
