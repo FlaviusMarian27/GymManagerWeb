@@ -41,3 +41,53 @@ function togglePlans() {
     }
   }
 }
+
+// Datele pentru fiecare plan
+const nutritionPlans = {
+  "Mic Dejun Sănătos": {
+    image: "IMAGES/omleta.jpg",
+    ingredients: "Ovăz, fructe, iaurt grecesc, semințe chia",
+    preparation: "Amestecă ingredientele și lasă la frigider 1 oră.",
+    values: "350 kcal | 20g proteine | 40g carbohidrați"
+  },
+  "Gustare Fitness": {
+    image: "IMAGES/gustare_fitness.jpg",
+    ingredients: "Migdale, smoothie proteic, fructe de pădure",
+    preparation: "Consumă-le ca gustare între mese.",
+    values: "250 kcal | 15g proteine | 18g carbohidrați"
+  },
+  "Prânz Echilibrat": {
+    image: "IMAGES/pranz_echilibrat.jpg",
+    ingredients: "Pui grill, orez brun, broccoli",
+    preparation: "Grătar pui, fierbe orezul, aburește broccoli.",
+    values: "600 kcal | 45g proteine | 50g carbohidrați"
+  },
+  // ... ȘI CONTINUI AȘA PENTRU CELELALTE PLANURI
+};
+
+// Deschide Modalul
+function openNutritionModal(planName) {
+  const modal = document.getElementById('nutritionModal');
+  const plan = nutritionPlans[planName];
+
+  if (plan) {
+    document.getElementById('nutritionImage').src = plan.image;
+    document.getElementById('nutritionTitle').textContent = planName;
+    document.getElementById('nutritionDetails').textContent = "Ingrediente & Mod preparare: " + plan.preparation;
+    document.getElementById('nutritionValues').textContent = plan.values;
+    modal.style.display = "block";
+  }
+}
+
+// Închide Modalul
+function closeNutritionModal() {
+  document.getElementById('nutritionModal').style.display = "none";
+}
+
+// Legare click pe plan-card
+document.querySelectorAll('.plan-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const title = card.querySelector('h3').innerText;
+    openNutritionModal(title);
+  });
+});

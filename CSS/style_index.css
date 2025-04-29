@@ -264,6 +264,62 @@ body {
     transform: scale(1.05);
 }  
 
+/* Modal pentru Plan Nutriție */
+.nutrition-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding-top: 80px;
+}
+  
+.nutrition-modal-content {
+    background-color: #fff8c6;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #fdd835;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+  
+.nutrition-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #212121;
+    cursor: pointer;
+}
+  
+.nutrition-image {
+    width: 90%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+  
+#nutritionTitle {
+    color: #212121;
+    margin-bottom: 10px;
+}
+  
+#nutritionDetails, #nutritionValues {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+  
+
 /* Buton Alatura-te servicii */
 .btn-alatura {
     display: inline-block;
