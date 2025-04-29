@@ -47,11 +47,62 @@
     </div>
     </section>
 
-    <section id="servicii" class="section">
-    <h2>Serviciile Noastre</h2>
-    <p>Personal Training, Clase de Grup, Nutriție și multe altele!</p>
+    <!-- Servicii -->
+    <section class="servicii-section" id="servicii">
+      <h2>Serviciile Noastre</h2>
+      <div class="servicii-container">
+        
+        <div class="serviciu">
+          <img src="IMAGES/nutrition.png" alt="Nutriție Personalizată">
+          <h3>Nutriție Personalizată</h3>
+          <p>Planuri nutriționale adaptate obiectivelor tale pentru rezultate rapide și sănătoase.</p>
+          <button id="nutritieBtn" class="btn-solicita">Vezi mai multe</button>
+        </div>
+    
+        <div class="serviciu">
+          <img src="IMAGES/muscularclass.png" alt="Clase de Grup">
+          <h3>Clase de Grup</h3>
+          <p>Participă la clase dinamice de forță, cardio sau relaxare, potrivite pentru toate nivelurile.</p>
+          <button class="btn-solicita">Vezi mai multe</button>
+        </div>
+    
+        <div class="serviciu">
+          <img src="IMAGES/coach.png" alt="Antrenori Personali">
+          <h3>Antrenori Personali</h3>
+          <p>Lucrează alături de antrenori dedicați pentru a-ți atinge obiectivele de fitness mai repede!</p>
+          <button class="btn-solicita">Solicită serviciul</button>
+        </div>
+    
+      </div>
     </section>
 
+    <!-- Nutriție Personalizată (Planuri Alimentare) -->
+    <section id="nutritie-plans" style="display:none; padding: 50px; background-color: #111; color: white;">
+      <h2 style="text-align: center; margin-bottom: 30px;">Planuri Alimentare</h2>
+      <button onclick="togglePlans()" id="toggleBtn" class="btn-close-all">
+        Ascunde planurile
+      </button>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <h3>Mic Dejun Sănătos</h3>
+          <p>Ovăz cu fructe, iaurt grecesc, semințe de chia.</p>
+        </div>
+        <div class="plan-card">
+          <h3>Gustare Fitness</h3>
+          <p>Migdale, smoothie proteic, fructe de pădure.</p>
+        </div>
+        <div class="plan-card">
+          <h3>Prânz Echilibrat</h3>
+          <p>Pui la grătar cu orez brun și broccoli aburit.</p>
+        </div>
+        <div class="plan-card">
+          <h3>Cină Ușoară</h3>
+          <p>Salată de ton cu avocado și legume crude.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Despre noi -->
     <section id="despre" class="despre-section">
     <div class="despre-container">
         <div class="despre-image">

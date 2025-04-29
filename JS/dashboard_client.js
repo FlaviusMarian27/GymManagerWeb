@@ -14,3 +14,24 @@ if (user) {
 } else {
   window.location.href = 'login.html';
 }
+
+// Când apasă pe butonul "Solicită serviciul" de la Nutriție
+const nutritieBtn = document.querySelector('#nutritieBtn');
+const nutritieSection = document.querySelector('#nutritie-plans');
+
+if (nutritieBtn && nutritieSection) {
+  nutritieBtn.addEventListener('click', () => {
+    nutritieSection.style.display = 'block';
+    window.location.hash = '#nutritie-plans';
+  });
+}
+
+function togglePlans() {
+  const plansSection = document.getElementById('nutritie-plans');
+  
+  if (plansSection.style.display === "none" || plansSection.style.display === "") {
+    plansSection.style.display = "block";
+  } else {
+    plansSection.style.display = "none";
+  }
+}

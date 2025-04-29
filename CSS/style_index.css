@@ -194,6 +194,66 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
   
+.btn-solicita {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #fdd835;
+    color: #212121;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+  
+.btn-solicita:hover {
+    background-color: #fbc02d;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+.plan-card {
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+  
+.plan-card:hover {
+    transform: scale(1.05);
+    background: #333;
+}
+  
+.plan-card h3 {
+    color: #fdd835;
+    margin-bottom: 10px;
+}
+  
+.plan-card p {
+    color: #ccc;
+}  
+
+.btn-close-all {
+    background-color: #fdd835;
+    color: #212121;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+.btn-close-all:hover {
+    background-color: #fbc02d;
+}  
+
 /* Buton Alatura-te servicii */
 .btn-alatura {
     display: inline-block;
