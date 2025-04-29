@@ -238,20 +238,27 @@ body {
     color: #ccc;
 }  
 
-.btn-close-all {
+.nutrition-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+.toggle-button {
     background-color: #fdd835;
     color: #212121;
     border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 30px;
     font-size: 16px;
     font-weight: bold;
+    border-radius: 25px;
+    margin-top: 15px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
   
-.btn-close-all:hover {
+.toggle-button:hover {
     background-color: #fbc02d;
+    transform: scale(1.05);
 }  
 
 /* Buton Alatura-te servicii */
