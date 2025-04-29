@@ -212,9 +212,12 @@ body {
 
 .plans-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* forțează 4 coloane */
     gap: 20px;
-  }
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
   
 .plan-card {
     background: #222;
