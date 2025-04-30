@@ -318,8 +318,35 @@ body {
     margin-bottom: 10px;
     font-size: 16px;
 }
-  
 
+/* pentru telefon*/
+@media (max-width: 768px) {
+    .plans-grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 coloana pe mobil */
+      padding: 0 10px;
+    }
+  
+    .plan-card {
+      width: 100%;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nutrition-header h2 {
+      font-size: 24px;
+    }
+}
+
+/* pentru tableta */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .plans-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}  
+  
 /* Buton Alatura-te servicii */
 .btn-alatura {
     display: inline-block;
@@ -632,6 +659,72 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }  
+
+/*Formular support*/
+.suport-section {
+  background: linear-gradient(to bottom, 212121, 212121);
+  padding: 60px 20px;
+  text-align: center;
+  color: #212121;
+}
+
+.suport-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fdd835;
+}
+
+.suport-section p {
+  color: #fdd835;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.suport-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 223, 0, 0.6);
+  box-shadow: 0 8px 32px rgba(255, 223, 0, 0.2);
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 500px;
+  margin: auto;
+  color: white;
+}
+
+.suport-form input,
+.suport-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+}
+
+.suport-form input::placeholder,
+.suport-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.suport-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #fdd835;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.suport-form button:hover {
+  background-color: #fff176;
+  transform: scale(1.03);
+}
+
 
 /*Social Media*/
 .contact-section {
