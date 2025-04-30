@@ -209,6 +209,42 @@ body {
 .btn-solicita:hover {
     background-color: #fbc02d;
 }
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* forțează 4 coloane */
+    gap: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.plan-card {
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+  
+.plan-card:hover {
+    transform: scale(1.05);
+    background: #333;
+}
+  
+.plan-card h3 {
+    color: #fdd835;
+    margin-bottom: 10px;
+}
+  
+.plan-card p {
+    color: #ccc;
+}  
+
+.nutrition-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
   
 .toggle-button {
     background-color: #fdd835;
@@ -227,6 +263,160 @@ body {
     background-color: #fbc02d;
     transform: scale(1.05);
 }  
+
+/* Modal pentru Plan Nutriție */
+.nutrition-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding-top: 80px;
+}
+  
+.nutrition-modal-content {
+    background-color: #fff8c6;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #fdd835;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    color: #212121;
+}
+  
+.nutrition-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #212121;
+    cursor: pointer;
+}
+  
+.nutrition-image {
+    width: 90%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+  
+#nutritionTitle {
+    color: #212121;
+    margin-bottom: 10px;
+}
+  
+#nutritionDetails, #nutritionValues {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* pentru telefon*/
+@media (max-width: 768px) {
+    .plans-grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 coloana pe mobil */
+      padding: 0 10px;
+    }
+  
+    .plan-card {
+      width: 100%;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nutrition-header h2 {
+      font-size: 24px;
+    }
+}
+
+/* pentru tableta */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .plans-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}  
+
+/* Selectare antrenor */
+.antrenor-card {
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.antrenor-card:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+.antrenor-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.antrenor-card h3 {
+  color: #fdd835;
+  margin: 10px 0 5px;
+}
+
+.antrenor-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.nutrition-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 80px;
+}
+
+.nutrition-modal-content {
+  background-color: #fff8c6;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #fdd835;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  color: #212121;
+}
+
+.nutrition-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #212121;
+  cursor: pointer;
+}
+
 
 /* Buton Alatura-te servicii */
 .btn-alatura {
