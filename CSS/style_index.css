@@ -288,6 +288,7 @@ body {
     max-width: 600px;
     text-align: center;
     position: relative;
+    color: #212121;
 }
   
 .nutrition-close {
@@ -346,7 +347,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
     }
 }  
-  
+
 /* Buton Alatura-te servicii */
 .btn-alatura {
     display: inline-block;
@@ -724,7 +725,6 @@ body {
   background-color: #fff176;
   transform: scale(1.03);
 }
-
 
 /*Social Media*/
 .contact-section {

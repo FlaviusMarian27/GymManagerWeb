@@ -64,7 +64,7 @@
           <img src="IMAGES/muscularclass.png" alt="Clase de Grup">
           <h3>Clase de Grup</h3>
           <p>Participă la clase dinamice de forță, cardio sau relaxare, potrivite pentru toate nivelurile.</p>
-          <button class="btn-solicita">Vezi mai multe</button>
+          <button id="grupeBtn" class="btn-solicita">Vezi mai multe</button>
         </div>
     
         <div class="serviciu">
@@ -152,7 +152,45 @@
           <p id="nutritionValues"></p>
         </div>
       </div>
+    </section>
 
+    
+    <!-- Clase de Grup -->
+    <section id="grupe-section" style="display:none; padding: 50px; background-color: #111; color: white;">
+      <div class="nutrition-header">
+        <h2>Clasele Noastre</h2>
+        <button onclick="toggleGrupe()" class="toggle-button">Ascunde Clasele</button>
+      </div>
+
+      <div class="plans-grid">
+        <div class="plan-card" onclick="openGrupeModal('forta')">
+          <h3>Clasă de Forță</h3>
+          <p>Exerciții intense pentru creșterea masei musculare.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('cardio')">
+          <h3>Cardio Power</h3>
+          <p>Arde calorii și îmbunătățește rezistența.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('relaxare')">
+          <h3>Stretch & Relax</h3>
+          <p>Întinderi și exerciții pentru relaxare totală.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('hiit')">
+          <h3>HIIT Challenge</h3>
+          <p>Intensitate maximă, rezultate rapide!</p>
+        </div>
+      </div>
+
+      <!-- Fereastra modală pentru clase -->
+      <div id="grupeModal" class="nutrition-modal">
+        <div class="nutrition-modal-content">
+          <span class="nutrition-close" onclick="closeGrupeModal()">&times;</span>
+          <img id="grupeImage" src="" class="nutrition-image" alt="Clasă">
+          <h2 id="grupeTitle"></h2>
+          <p id="grupeDescriere"></p>
+          <p id="grupeInfo"></p>
+        </div>
+      </div>
     </section>
 
     <!-- Despre noi -->

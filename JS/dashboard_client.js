@@ -144,3 +144,70 @@ document.querySelectorAll('.plan-card').forEach(card => {
     openNutritionModal(title);
   });
 });
+
+// Butonul pentru clase de grup
+const grupeBtn = document.getElementById('grupeBtn');
+const grupeSection = document.getElementById('grupe-section');
+
+if (grupeBtn && grupeSection) {
+  grupeBtn.addEventListener('click', () => {
+    grupeSection.style.display = 'block';
+    window.location.hash = '#grupe-section';
+  });
+}
+
+const grupeInfo = {
+  forta: {
+    image: './IMAGES/gym1.jpg',
+    title: 'Clasă de Forță',
+    descriere: 'Antrenamente cu greutăți pentru definirea musculaturii.',
+    info: 'Durată: 60 min | Nivel: Mediu - Avansat'
+  },
+  cardio: {
+    image: './IMAGES/gym2.jpg',
+    title: 'Cardio Power',
+    descriere: 'Sesiune de intensitate crescută pentru arderea grăsimilor.',
+    info: 'Durată: 45 min | Nivel: Începător - Avansat'
+  },
+  relaxare: {
+    image: './IMAGES/gym3.jpg',
+    title: 'Stretch & Relax',
+    descriere: 'Relaxare musculară și reducerea stresului.',
+    info: 'Durată: 40 min | Nivel: Toate nivelurile'
+  },
+  hiit: {
+    image: './IMAGES/gym4.jpg',
+    title: 'HIIT Challenge',
+    descriere: 'Exerciții scurte și explozive pentru rezultate rapide.',
+    info: 'Durată: 30 min | Nivel: Intens'
+  }
+};
+
+function openGrupeModal(id) {
+  const data = grupeInfo[id];
+  document.getElementById('grupeTitle').textContent = data.title;
+  document.getElementById('grupeDescriere').textContent = data.descriere;
+  document.getElementById('grupeInfo').textContent = data.info;
+  document.getElementById('grupeImage').src = data.image;
+  document.getElementById('grupeModal').style.display = 'block';
+}
+
+function closeGrupeModal() {
+  document.getElementById('grupeModal').style.display = 'none';
+}
+
+function toggleGrupe() {
+  const section = document.getElementById("grupe-section");
+
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+
+    // Scroll smooth la secțiunea servicii
+    const serviciiSection = document.getElementById("servicii");
+    if (serviciiSection) {
+      serviciiSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}
