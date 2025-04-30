@@ -348,6 +348,76 @@ body {
     }
 }  
 
+/* Selectare antrenor */
+.antrenor-card {
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.antrenor-card:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+.antrenor-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.antrenor-card h3 {
+  color: #fdd835;
+  margin: 10px 0 5px;
+}
+
+.antrenor-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.nutrition-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 80px;
+}
+
+.nutrition-modal-content {
+  background-color: #fff8c6;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #fdd835;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  color: #212121;
+}
+
+.nutrition-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #212121;
+  cursor: pointer;
+}
+
+
 /* Buton Alatura-te servicii */
 .btn-alatura {
     display: inline-block;

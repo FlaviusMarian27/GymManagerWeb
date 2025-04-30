@@ -71,7 +71,7 @@
           <img src="IMAGES/coach.png" alt="Antrenori Personali">
           <h3>Antrenori Personali</h3>
           <p>Lucrează alături de antrenori dedicați pentru a-ți atinge obiectivele de fitness mai repede!</p>
-          <button class="btn-solicita">Solicită serviciul</button>
+          <button class="btn-solicita" onclick="toggleAntrenori()">Solicită serviciul</button>
         </div>
     
       </div>
@@ -189,6 +189,29 @@
           <h2 id="grupeTitle"></h2>
           <p id="grupeDescriere"></p>
           <p id="grupeInfo"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secțiunea Antrenori -->
+    <section id="select-antrenor" style="display: none; padding: 50px; background-color: #111;">
+      <div class="nutrition-header">
+        <h2>Selectează Antrenorul</h2>
+        <button onclick="toggleAntrenori()" class="toggle-button">Ascunde Antrenorii</button>
+      </div>
+
+      <div class="plans-grid" id="antrenoriContainer">
+        <!-- Antrenorii se încarcă din JavaScript -->
+      </div>
+
+      <!-- Modal pentru detalii antrenor -->
+      <div id="antrenorModal" class="nutrition-modal">
+        <div class="nutrition-modal-content">
+          <span class="nutrition-close" onclick="closeAntrenorModal()">&times;</span>
+          <img src="IMAGES/default_profile.png" alt="Profil Antrenor" class="nutrition-image" id="antrenorImg">
+          <h2 id="antrenorNume">Nume Antrenor</h2>
+          <p id="antrenorEmail">Email Antrenor</p>
+          <button onclick="trimiteCerere()" class="toggle-button">Trimite Cerere</button>
         </div>
       </div>
     </section>

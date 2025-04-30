@@ -211,3 +211,80 @@ function toggleGrupe() {
     }
   }
 }
+
+
+//antrenori
+function toggleAntrenori() {
+  const section = document.getElementById("select-antrenor");
+
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    section.style.display = "none";
+
+    // Scroll smooth înapoi la secțiunea servicii
+    const serviciiSection = document.getElementById("servicii");
+    if (serviciiSection) {
+      serviciiSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}
+
+// Afișează toți antrenorii din localStorage
+function afiseazaAntrenori() {
+  const container = document.getElementById('antrenoriContainer');
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const antrenori = users.filter(u => u.role === "Antrenor");
+
+  container.innerHTML = '';
+
+  antrenori.forEach(antrenor => {
+    const card = document.createElement('div');
+    card.classList.add('antrenor-card');
+    card.innerHTML = `
+      <img src="IMAGES/default_profile.png" alt="Profil ${antrenor.username}">
+      <h3>${antrenor.username}</h3>
+      <p>${antrenor.email}</p>
+    `;
+    card.onclick = () => openAntrenorModal(antrenor);
+    container.appendChild(card);
+  });
+}
+
+let antrenorSelectat = null;
+
+function openAntrenorModal(antrenor) {
+  antrenorSelectat = antrenor;
+  document.getElementById('antrenorImg').src = "IMAGES/default_profile.png";
+  document.getElementById('antrenorNume').innerText = antrenor.username;
+  document.getElementById('antrenorEmail').innerText = `Email: ${antrenor.email}`;
+  document.getElementById('antrenorModal').style.display = 'block';
+}
+
+function closeAntrenorModal() {
+  document.getElementById('antrenorModal').style.display = 'none';
+}
+
+function trimiteCerere() {
+  if (!antrenorSelectat) return;
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const cereri = JSON.parse(localStorage.getItem('cereriAntrenori')) || [];
+
+  cereri.push({
+    client: currentUser.username,
+    antrenor: antrenorSelectat.username,
+    status: 'În așteptare'
+  });
+
+  localStorage.setItem('cereriAntrenori', JSON.stringify(cereri));
+  closeAntrenorModal();
+
+  // Ascunde secțiunea după trimitere
+  document.getElementById('select-antrenor').style.display = 'none';
+  alert("Cererea a fost trimisă către " + antrenorSelectat.username);
+}
+
+// Se încarcă automat antrenorii
+window.addEventListener('load', afiseazaAntrenori);
