@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Antrenor - Dravius Gym</title>
 
-  <link rel="stylesheet" href="./CSS/style_index.css">
+  <link rel="stylesheet" href="./CSS/style_antrenor.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
@@ -47,9 +47,171 @@
     </div>
     </section>
 
-    <section id="servicii" class="section">
-    <h2>Serviciile Noastre</h2>
-    <p>Personal Training, Clase de Grup, Nutriție și multe altele!</p>
+    <!-- Servicii -->
+    <section class="servicii-section" id="servicii">
+      <h2>Serviciile Noastre</h2>
+      <div class="servicii-container">
+        
+        <div class="serviciu">
+          <img src="IMAGES/nutrition.png" alt="Nutriție Personalizată">
+          <h3>Nutriție Personalizată</h3>
+          <p>Planuri nutriționale adaptate obiectivelor tale pentru rezultate rapide și sănătoase.</p>
+          <button id="nutritieBtn" class="btn-solicita">Vezi mai multe</button>
+        </div>
+    
+        <div class="serviciu">
+          <img src="IMAGES/muscularclass.png" alt="Clase de Grup">
+          <h3>Clase de Grup</h3>
+          <p>Participă la clase dinamice de forță, cardio sau relaxare, potrivite pentru toate nivelurile.</p>
+          <button id="grupeBtn" class="btn-solicita">Vezi mai multe</button>
+        </div>
+    
+        <div class="serviciu">
+          <img src="IMAGES/coach.png" alt="Antrenori Personali">
+          <h3>Antrenori Personali</h3>
+          <p>Lucrează alături de antrenori dedicați pentru a-ți atinge obiectivele de fitness mai repede!</p>
+          <button class="btn-solicita" onclick="toggleAntrenori()">Solicită serviciul</button>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- Nutriție Personalizată (Planuri Alimentare) -->
+    <section id="nutritie-plans" style="display:none; padding: 50px; background-color: #111; color: white;">
+      <div class="nutrition-header">
+        <h2>Planuri Nutriționale</h2>
+        <button onclick="togglePlans()" class="toggle-button">Ascunde Planurile</button>
+      </div>
+      
+      <div id="nutritie-plans">
+        <div class="plans-grid">
+          <div class="plan-card">
+            <h3>Mic Dejun Sănătos</h3>
+            <p>Ovăz cu fructe, iaurt grecesc, semințe de chia.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Gustare Fitness</h3>
+            <p>Migdale, smoothie proteic, fructe de pădure.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Prânz Echilibrat</h3>
+            <p>Pui la grătar cu orez brun și broccoli aburit.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Cină Ușoară</h3>
+            <p>Salată de ton cu avocado și legume crude.</p>
+          </div>
+          <div class="plan-card" onclick="openModal('micdejun_fresh')">
+            <h3>Mic Dejun Fresh Cut</h3>
+            <p>Tartine cu avocado și ou poșat</p>
+          </div>
+        
+          <div class="plan-card" onclick="openModal('gustare_rapida')">
+            <h3>Gustare Rapidă Bulk</h3>
+            <p>Budincă de chia cu lapte vegetal</p>
+          </div>
+        
+          <div class="plan-card" onclick="openModal('pranz_sportiv')">
+            <h3>Prânz Sportiv Cut</h3>
+            <p>Salată rece cu ton și ouă fierte</p>
+          </div>
+        
+          <div class="plan-card" onclick="openModal('cina_rebuild')">
+            <h3>Cină Rebuild Bulk</h3>
+            <p>Cartofi dulci copți + mușchi de vită</p>
+          </div>
+
+          <div class="plan-card">
+            <h3>Mic Dejun Energetic</h3>
+            <p>Toast integral cu avocado, ouă ochiuri și roșii cherry.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Gustare Proteică</h3>
+            <p>Iaurt grecesc cu unt de arahide și semințe de in.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Prânz Vegan</h3>
+            <p>Quinoa cu năut, spanac și dressing de lămâie.</p>
+          </div>
+          <div class="plan-card">
+            <h3>Cină pentru Slăbit</h3>
+            <p>Pește la cuptor cu sparanghel și felii de dovlecel.</p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Fereastra Modală -->
+      <div id="nutritionModal" class="nutrition-modal">
+        <div class="nutrition-modal-content">
+          <span class="nutrition-close" onclick="closeNutritionModal()">&times;</span>
+          <img id="nutritionImage" src="" alt="Poză preparat" class="nutrition-image">
+          <h2 id="nutritionTitle"></h2>
+          <p id="nutritionDetails"></p>
+          <p id="nutritionValues"></p>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Clase de Grup -->
+    <section id="grupe-section" style="display:none; padding: 50px; background-color: #111; color: white;">
+      <div class="nutrition-header">
+        <h2>Clasele Noastre</h2>
+        <button onclick="toggleGrupe()" class="toggle-button">Ascunde Clasele</button>
+      </div>
+
+      <div class="plans-grid">
+        <div class="plan-card" onclick="openGrupeModal('forta')">
+          <h3>Clasă de Forță</h3>
+          <p>Exerciții intense pentru creșterea masei musculare.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('cardio')">
+          <h3>Cardio Power</h3>
+          <p>Arde calorii și îmbunătățește rezistența.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('relaxare')">
+          <h3>Stretch & Relax</h3>
+          <p>Întinderi și exerciții pentru relaxare totală.</p>
+        </div>
+        <div class="plan-card" onclick="openGrupeModal('hiit')">
+          <h3>HIIT Challenge</h3>
+          <p>Intensitate maximă, rezultate rapide!</p>
+        </div>
+      </div>
+
+      <!-- Fereastra modală pentru clase -->
+      <div id="grupeModal" class="nutrition-modal">
+        <div class="nutrition-modal-content">
+          <span class="nutrition-close" onclick="closeGrupeModal()">&times;</span>
+          <img id="grupeImage" src="" class="nutrition-image" alt="Clasă">
+          <h2 id="grupeTitle"></h2>
+          <p id="grupeDescriere"></p>
+          <p id="grupeInfo"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectiunea Antrenori -->
+    <section id="select-antrenor" style="padding: 50px; background-color: #111;">
+      <div class="nutrition-header">
+        <h2>Antrenorii Disponibili</h2>
+        <button class="toggle-button" onclick="inchideAntrenori()">Inchide Antrenorii</button>
+      </div>
+
+      <div class="plans-grid" id="antrenoriContainer">
+        <!-- Aici vor fi incarcati antrenorii -->
+      </div>
+
+      <!-- Modal pentru detalii antrenor -->
+      <div id="antrenorModal" class="nutrition-modal">
+        <div class="nutrition-modal-content">
+          <span class="nutrition-close" onclick="closeAntrenorModal()">&times;</span>
+          <img src="IMAGES/default_profile.png" alt="Profil Antrenor" class="nutrition-image" id="antrenorImg">
+          <h2 id="antrenorNume">Nume Antrenor</h2>
+          <p id="antrenorEmail">Email Antrenor</p>
+        </div>
+      </div>
     </section>
 
     <section id="despre" class="despre-section">
