@@ -1,54 +1,86 @@
+// FRONTEND/JS/auth.js
+
+// ─── Toggle panels Sign In / Sign Up ───────────────────────────
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container    = document.getElementById('container');
+
+signUpButton?.addEventListener('click', () =>
+  container.classList.add('right-panel-active')
+);
+signInButton?.addEventListener('click', () =>
+  container.classList.remove('right-panel-active')
+);
+
+// ─── REGISTER ───────────────────────────────────────────────────
 const registerForm = document.getElementById('registerForm');
-const loginForm    = document.getElementById('loginForm');
-const roleSelect   = document.getElementById('role');
+const registerBtn  = document.getElementById('registerBtn');
 
-signUpButton?.addEventListener('click',  () => container.classList.add("right-panel-active"));
-signInButton?.addEventListener('click', () => container.classList.remove("right-panel-active"));
-
-// -- Register --
-registerForm?.addEventListener('submit', e => {
-  e.preventDefault();
-  const [usernameInput, emailInput, passwordInput] = registerForm.querySelectorAll('input');
-  const user = {
-    username: usernameInput.value.trim(),
-    email:    emailInput.value.trim(),
-    password: passwordInput.value,
-    role:     roleSelect.value
-  };
-  if (!user.username || !user.email || !user.password || !user.role) {
+registerBtn?.addEventListener('click', async () => {
+  console.log('CLICK pe SIGN UP');
+  const username = registerForm.querySelector('input[name="username"]').value.trim();
+  const email    = registerForm.querySelector('input[name="email"]').value.trim();
+  const password = registerForm.querySelector('input[name="password"]').value;
+  const role     = registerForm.querySelector('select[name="role"]').value;
+  if (!username || !email || !password || !role) {
     return alert('Completează toate câmpurile!');
   }
-  let users = JSON.parse(localStorage.getItem('users')) || [];
-  if (users.some(u => u.email === user.email)) {
-    return alert('Există deja un cont cu acest email.');
+  try {
+    const res  = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email, password, role })
+    });
+    console.log('➔ POST /register status:', res.status);
+    const data = await res.json();
+    if (res.ok) {
+      alert('Cont creat cu succes! Poți acum să te autentifici.');
+      registerForm.reset();
+      container.classList.remove('right-panel-active');
+    } else {
+      alert(data.message || 'Eroare la înregistrare.');
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Serverul nu răspunde.');
   }
-  users.push(user);
-  localStorage.setItem('users', JSON.stringify(users));
-  alert('Cont creat cu succes! Te rugăm să te autentifici.');
-  container.classList.remove("right-panel-active");
 });
 
-// -- Login --
-loginForm?.addEventListener('submit', e => {
-  e.preventDefault();
-  const [usernameInput, passwordInput] = loginForm.querySelectorAll('input');
-  const username = usernameInput.value.trim();
-  const password = passwordInput.value;
-  if (!username || !password) {
+// ─── LOGIN ───────────────────────────────────────────────────────
+const loginForm = document.getElementById('loginForm');
+const loginBtn  = document.getElementById('loginBtn');
+
+loginBtn?.addEventListener('click', async () => {
+  console.log('CLICK pe SIGN IN');
+  const email    = loginForm.querySelector('input[name="email"]').value.trim();
+  const password = loginForm.querySelector('input[name="password"]').value;
+  if (!email || !password) {
     return alert('Completează toate câmpurile!');
   }
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const user  = users.find(u => u.username === username && u.password === password);
-  if (!user) {
-    return alert('Nume de utilizator sau parolă incorectă!');
+  try {
+    const res  = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    console.log('➔ POST /login status:', res.status);
+    const data = await res.json();
+
+    if (res.ok && data.token) {
+      localStorage.setItem('token',    data.token);
+      localStorage.setItem('username', data.user.username);
+      localStorage.setItem('role',     data.user.role);
+      localStorage.setItem('userId',   data.user.id);
+
+      window.location.href =
+        data.user.role === 'Client'
+          ? 'dashboard_client.html'
+          : 'dashboard_antrenor.html';
+    } else {
+      alert(data.message || 'Eroare la autentificare.');
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Serverul nu răspunde.');
   }
-  // **Consistent key** here:
-  localStorage.setItem('currentUser', JSON.stringify(user));
-  const dest = user.role === 'Client'
-             ? 'dashboard_client.html'
-             : 'dashboard_antrenor.html';
-  window.location.href = dest;
 });
