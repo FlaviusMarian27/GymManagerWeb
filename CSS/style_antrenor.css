@@ -17,6 +17,90 @@ body {
     color: #fff;
 }
 
+#notif-dropdown {
+  background: #181818;
+  color: #f1c93b;
+  padding: 20px 16px;
+  border-radius: 16px;
+  width: 340px;
+  z-index: 999;
+  box-shadow: 0 6px 32px #000b;
+  font-family: inherit;
+  font-size: 16px;
+  border: 1px solid #2b2b2b;
+}
+
+.notif-request {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #292929;
+  transition: background 0.25s;
+}
+
+.notif-request:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.notif-request .client-name {
+  font-weight: bold;
+  color: #ffe43b;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+.notif-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.notif-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 1px 4px #0003;
+  transition: background 0.2s, transform 0.1s;
+  outline: none;
+}
+
+.notif-btn.accept {
+  background: linear-gradient(90deg, #ffe43b 60%, #f1c93b 100%);
+  color: #1a1808;
+}
+.notif-btn.accept:hover {
+  background: linear-gradient(90deg, #fff270 60%, #ffe43b 100%);
+  transform: scale(1.04);
+}
+
+.notif-btn.reject {
+  background: #ef4444;
+  color: white;
+}
+.notif-btn.reject:hover {
+  background: #c61c1c;
+  transform: scale(1.04);
+}
+
+#notif-count {
+  background: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 13px;
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  font-weight: bold;
+  box-shadow: 0 1px 8px #0006;
+}
+
 /* Header */
 .header {
     display: flex;
