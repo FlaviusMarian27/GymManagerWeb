@@ -4,96 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autentificare / Înregistrare</title>
-
-  <!-- Link către CSS -->
-  <link rel="stylesheet" href="./CSS/style_login.css" />
-
-  <!-- Font Awesome pentru iconițele sociale -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/style_login.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
-
-  <!-- HEADER CU NAVIGARE (FARA Log In) -->
   <header class="header">
     <a href="index.html" class="logo">
-      <img src="IMAGES/LogoGym.png" alt="Dravius Gym Logo">
+      <img src="IMAGES/LogoGym.png" alt="Dravius Gym Logo" />
       Dravius <span>Gym</span>
     </a>
-    
     <nav class="navbar" id="navbar">
       <a href="index.html#top">Acasă</a>
       <a href="index.html#servicii">Servicii</a>
       <a href="index.html#despre">Despre noi</a>
       <a href="index.html#abonamente">Abonamente</a>
       <a href="index.html#review">Review-uri</a>
-      <a href="index.html#locatie">Locatie</a>
+      <a href="index.html#locatie">Locație</a>
       <a href="index.html#suport">Suport</a>
-      <a href="index.html#contact">Contact us</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-  
-    <div class="menu-icon" id="menu-icon">
-      <i class="fas fa-bars"></i>
-    </div>
-  </header>  
+    <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></div>
+  </header>
 
-  <!-- CONȚINUT PRINCIPAL -->
   <div class="main-content">
     <div class="container" id="container">
 
-      <!-- FORMULAR DE INREGISTRARE -->
+      <!-- SIGN UP -->
       <div class="form-container sign-up-container">
         <form id="registerForm">
-          <h1>Creeaza cont</h1>
-
+          <h1>Creează cont</h1>
           <div class="social-container">
             <a href="#"><i class="fab fa-google"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
-
-          <span>Foloseste email-ul pentru a te inregistra</span>
-
-          <input type="text"     placeholder="Nume utilizator" required />
-          <input type="email"    placeholder="Email"           required />
-          <input type="password" placeholder="Parolă"          required />
-
-
-          <!-- ALEGERE ROL -->
-          <select id="role" required>
-            <option value="">Selecteaza rolul</option>
+          <span>Folosește email-ul pentru a te înregistra</span>
+          <input
+            type="text"
+            name="username"
+            placeholder="Nume utilizator"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Parolă"
+            required
+          />
+          <select name="role" required>
+            <option value="">Selectează rolul</option>
             <option value="Client">Client</option>
             <option value="Antrenor">Antrenor</option>
           </select>
-
-          <button type="submit">Sign Up</button>
+          <button type="button" id="registerBtn">SIGN UP</button>
         </form>
       </div>
 
-      <!-- === FORMULAR DE AUTENTIFICARE === -->
+      <!-- SIGN IN -->
       <div class="form-container sign-in-container">
         <form id="loginForm">
           <h1>Autentificare</h1>
-
           <div class="social-container">
             <a href="#"><i class="fab fa-google"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
-
           <span>Folosește contul tău pentru a te loga</span>
-
-          <input type="text"     placeholder="Nume utilizator" required />
-          <input type="password" placeholder="Parolă"          required />
-
-          <button type="submit">Sign In</button>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Parolă"
+            required
+          />
+          <button type="button" id="loginBtn">SIGN IN</button>
         </form>
       </div>
 
-      <!-- === PANOU OVERLAY - ANIMATIE SI MESAJ === -->
+      <!-- OVERLAY PANELS -->
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
@@ -101,7 +105,6 @@
             <p>Intră în cont pentru a accesa planurile de antrenament</p>
             <button class="ghost" id="signIn">Sign In</button>
           </div>
-
           <div class="overlay-panel overlay-right">
             <h1>Bun venit!</h1>
             <p>Completează datele pentru a-ți crea contul</p>
@@ -109,28 +112,11 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <section id="contact" class="contact-section">
-    <h2>Contactează-ne</h2>
-    <h3>Urmărește-ne și conectează-te cu noi pentru mai multe noutăți și oferte!</h3>
-    <div class="social-links">
-      <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </section>
-  
-  <footer class="footer">
-    <p id="copyright"></p>
-  </footer>
-  <!-- Script pentru animația overlay-ului -->
-  <script src="./JS/auth.js"></script>
-  <script src="./JS/navbar.js"></script>
-  <script src="./JS/copyright.js"></script>
-  
+  <!-- Scripturi -->
+  <script src="JS/auth.js" defer></script>
+  <script src="JS/navbar.js" defer></script>
 </body>
 </html>
